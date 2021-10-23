@@ -1,0 +1,17 @@
+{
+  "name": "ALICE",
+  "version": "21.10.23",
+  "description": "Automated Local Intel Consolidation for Eve",
+  "private": true,
+  "main": "index.js",
+  "scripts": {},
+  "author": "Anton Shulgin",
+  "license": "CC-BY-NC-ND-4.0",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "pug-cli": "^1.0.0-alpha6",
+    "reset-css": "^5.0.1",
+    "stylus": "^0.54.8",
+    "terser": "^5.7.0"
+  }
+}

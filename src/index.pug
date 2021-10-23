@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(name='viewport' content='width=device-width, height=device-height')
+		link(rel='stylesheet' type='text/css' href='./bundle.css')
+		title ALICE
+
+
+	body
+		div#View
+			div#Controls
+			div#Overview
+
+		include ./features/Lookup/Lookup.pug
+		include ./features/Pilot/Pilot.pug
+		include ./features/CombatStats/CombatStats.pug
+		include ./features/ShipStats/ShipStats.pug
+		include ./features/ShipStatsTile/ShipStatsTile.pug
+
+		script(src='./bundle.js')

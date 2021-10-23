@@ -1,0 +1,28 @@
+button
+	align-items      center
+	background-color @css { hsla(var(--fg-hsl), 0.1 )}
+	border           0
+	border-radius    var(--border-radius)
+	color            @css { hsla(var(--fg-hsl), 1 )}
+	cursor           pointer
+	display          flex
+	font             inherit
+	font-weight      600
+	justify-content  center
+	margin           0
+	opacity          0.8
+	outline          0
+	padding          0.5rem 1rem
+	text-transform   uppercase
+
+	&:hover
+	&:focus
+		opacity          1
+
+	&:focus
+		background-color @css { hsla(var(--accent-hsl), 0.1) }
+		color            var(--accent-fg)
+
+	&[type='submit']
+		background-color var(--accent)
+		color            var(--accent-fg)

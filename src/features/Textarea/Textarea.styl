@@ -1,0 +1,21 @@
+textarea
+	background-color @css { hsla(var(--fg-hsl), 0.05) }
+	border           solid 2px @css { hsla(var(--fg-hsl), 0.1) }
+	border-radius    var(--border-radius)
+	color            var(--fg)
+	display          flex
+	font             inherit
+	line-height      1.25
+	margin           0
+	opacity          0.8
+	outline          0
+	padding          1rem
+
+	&:hover
+	&:focus
+		opacity 1
+
+	&:focus
+		background-color @css { hsla(var(--accent-hsl), 0.1) }
+		border           solid 2px var(--accent)
+		color            var(--fg)

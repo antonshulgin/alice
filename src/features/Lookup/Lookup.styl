@@ -1,0 +1,52 @@
+.Lookup
+	align-content stretch
+	display       flex
+	flex-flow     column
+	flex-grow     1
+	position      relative
+
+
+.Lookup-logo
+	background-color      @css { hsla(var(--fg-hsl), 0.15) }
+	background-image      url('./assets/logo.svg')
+	background-position-x 0
+	background-position-y -20px
+	background-repeat     no-repeat
+	border-radius         var(--border-radius) var(--border-radius) 0 0
+	color                 var(--bg)
+	display               block
+	height                20px
+	left                  0
+	opacity               0.8
+	position              absolute
+	top                   -20px
+	width                 60px
+
+
+.Lookup-names
+	border-top-left-radius 0
+	flex-grow              1
+	min-width              100%
+	resize                 horizontal
+
+	&:hover + .Lookup-logo
+	&:focus + .Lookup-logo
+		opacity 1
+
+	&:focus + .Lookup-logo
+		background-color @css { hsla(var(--accent-hsl), 1) }
+
+
+.Lookup-submit
+	margin-top 1rem
+	padding    1rem
+
+
+.Lookup-acknowledgements
+	color      @css { hsla(var(--fg-hsl), 0.6) }
+	font-size  0.9rem
+	margin-top 1rem
+	opacity    0.8
+
+	a
+		color @css { hsla(var(--fg-hsl), 1) }

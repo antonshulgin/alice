@@ -1,0 +1,50 @@
+.CombatStats
+	display flex
+	width   12rem
+
+	&.ready
+		.CombatStats-solo
+		.CombatStats-gangs
+		.CombatStats-losses
+			display flex
+
+		.CombatStats-fetch-stats
+			display none
+
+
+.CombatStats-fetch-stats
+	display    flex
+	font-size  0.8rem
+	flex-basis 100%
+
+
+.CombatStats-solo
+.CombatStats-gangs
+.CombatStats-losses
+	align-items     center
+	border-radius   var(--border-radius)
+	display         none
+	flex-basis      100%
+	justify-content center
+	margin          0 0.25rem
+	padding         0.5rem
+	text-decoration none
+
+	&:hover
+		opacity 1 !important
+
+
+
+.CombatStats-solo
+	background-color var(--threat-high)
+	color            var(--threat-high-fg)
+	margin-left      0
+
+.CombatStats-gangs
+	background-color var(--threat-medium)
+	color            var(--threat-medium-fg)
+
+.CombatStats-losses
+	background-color var(--threat-low)
+	color            var(--threat-low-fg)
+	margin-right     0

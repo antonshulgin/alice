@@ -1,0 +1,11 @@
+template#templateLookup
+	form.Lookup(name='lookup' novalidate)
+		textarea.Lookup-names(name='names' placeholder='PIlot names here')
+		span.Lookup-logo(title='Automated Local Intel Consolidation for Eve')
+
+		button.Lookup-submit(name='doLookup' type='submit') Look up
+
+		footer.Lookup-acknowledgements
+			p Data from <a href='https://esi.evetech.net/'>ESI</a> and <a href='https://zkillboard.com/'>zKillboard</a>.
+			p Pilot portraits are property of <a href='https://www.ccpgames.com/'>CCP Games</a>.
+

@@ -1,0 +1,116 @@
+.Pilot
+	align-items stretch
+	display     flex
+	flex-wrap   nowrap
+	margin      0.5rem 0
+	height      2.5rem
+
+	&:hover .Pilot-summary
+	&:hover .Pilot-affiliation
+		background-color @css { hsla(var(--fg-hsl), 0.1) }
+		color            @css { hsla(var(--fg-hsl), 1) }
+
+	&:first-child { margin-top:    0; }
+	&:last-child  { margin-bottom: 0; }
+
+
+.Pilot-portrait
+	align-self    center
+	border-radius 2rem
+	height        2rem
+	margin-right  1rem
+	width         2rem
+
+
+.Pilot-summary
+	align-items     center
+	border-radius   var(--border-radius)
+	display         flex
+	flex-grow       1
+	padding         0.5rem 1rem
+	text-decoration none
+
+	&:after
+		border-top  dotted 2px @css { hsla(var(--fg-hsl), 0.1) }
+		content     ''
+		flex-grow   1
+		height      0
+		margin      0 0 0 1rem
+
+	&:hover
+		background-color var(--accent)    !important
+		color            var(--accent-fg) !important
+
+		.Pilot-status
+			box-shadow 0 0 0 2px @css { hsla(var(--accent-fg-hsl), 1) }
+
+
+.Pilot-status
+	background-color var(--fg)
+	border-radius    0.5rem
+	height           0.5rem
+	margin-right     1rem
+	width            0.5rem
+
+	&[data-status='5']
+	&[data-status='4']
+	&[data-status='3']
+		background-color var(--threat-none)
+
+	&[data-status='2']
+	&[data-status='1']
+		background-color var(--threat-low)
+
+	&[data-status='0']
+		background-color var(--fg)
+
+	&[data-status='-1']
+	&[data-status='-2']
+	&[data-status='-3']
+	&[data-status='-4']
+	&[data-status='-5']
+		background-color var(--threat-medium)
+
+	&[data-status='-6']
+	&[data-status='-7']
+	&[data-status='-8']
+	&[data-status='-9']
+	&[data-status='-10']
+		background-color var(--threat-high)
+
+
+.Pilot-name
+	font-weight 600
+
+
+.Pilot-affiliation
+	align-items   center
+	border        solid 2px @css { hsla(var(--fg-hsl), 0.1) }
+	border-radius var(--border-radius)
+	display       flex
+	font-size     0.9rem
+	margin-left   0.5rem
+	padding       0.5rem 1rem
+
+	&[data-militia='caldari']  { border: 0; background-color: @css { hsla(var(--militia-caldari-hsl),  0.2) !important; } }
+	&[data-militia='minmatar'] { border: 0; background-color: @css { hsla(var(--militia-minmatar-hsl), 0.2) !important; } }
+	&[data-militia='amarr']    { border: 0; background-color: @css { hsla(var(--militia-amarr-hsl),    0.2) !important; } }
+	&[data-militia='gallente'] { border: 0; background-color: @css { hsla(var(--militia-gallente-hsl), 0.2) !important; } }
+
+
+.Pilot-alliance
+	margin-left 1rem
+
+
+.Pilot-militia
+	margin-left 1rem
+
+
+.Pilot-combat-stats
+	display     flex
+	margin-left 1rem
+
+
+.Pilot-ship-stats
+	display     flex
+	margin-left 1rem

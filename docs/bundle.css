@@ -1,0 +1,53 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v5.0.1 | 20191019
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, menu, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+    display: none;
+}
+body {
+	line-height: 1;
+}
+menu, ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+:root{--fg-hsl:0,0%,100%;--bg-hsl:0,0%,0%;--accent-hsl:350,80%,50%;--accent-fg-hsl:0,0%,100%;--threat-none-hsl:220,50%,40%;--threat-low-hsl:120,50%,40%;--threat-medium-hsl:40,100%,40%;--threat-high-hsl:0,100%,40%;--threat-none-fg-hsl:0,0%,100%;--threat-low-fg-hsl:0,0%,100%;--threat-medium-fg-hsl:0,0%,100%;--threat-high-fg-hsl:0,0%,100%;--fg:hsl(var(--fg-hsl));--bg:hsl(var(--bg-hsl));--accent:hsl(var(--accent-hsl));--accent-fg:hsl(var(--accent-fg-hsl));--threat-none:hsl(var(--threat-none-hsl));--threat-low:hsl(var(--threat-low-hsl));--threat-medium:hsl(var(--threat-medium-hsl));--threat-high:hsl(var(--threat-high-hsl));--threat-none-fg:hsl(var(--threat-none-fg-hsl));--threat-low-fg:hsl(var(--threat-low-fg-hsl));--threat-medium-fg:hsl(var(--threat-medium-fg-hsl));--threat-high-fg:hsl(var(--threat-high-fg-hsl));--militia-caldari-hsl:220,80%,60%;--militia-minmatar-hsl:10,80%,60%;--militia-amarr-hsl:60,80%,60%;--militia-gallente-hsl:160,80%,60%;--border-radius:.1rem;--animation-blink:blink .5s infinite ease;--animation-blonk:blonk .5s infinite ease}*{-webkit-tap-highlight-color:transparent;box-sizing:border-box}html{background-color:var(--bg);color:var(--fg);display:flex;font-family:sans-serif;font-size:10pt;font-weight:400;justify-content:center}a{color:inherit;font:inherit;outline:0;text-decoration:underline}p{line-height:1.25;margin:.5rem 0}p:first-child{margin-top:0}p:last-child{margin-bottom:0}.animation-blink{animation:var(--animation-blink)}.animation-blonk{animation:var(--animation-blonk)}.hidden{display:none}.busy{animation:var(--animation-blink);background-color:inherit !important;color:inherit !important;cursor:auto;pointer-events:none}#View{display:flex;height:100vh;justify-content:center;margin:auto;overflow:auto;padding:0;width:100vw}#Controls{display:flex;flex-flow:column;left:0;min-width:20rem;padding:3rem;position:sticky;top:0}#Overview{align-self:flex-start;flex-grow:1;max-width:80rem;min-width:60rem;padding:3rem 3rem 3rem 0}button{align-items:center;background-color:hsla(var(--fg-hsl), 0.1 );border:0;border-radius:var(--border-radius);color:hsla(var(--fg-hsl), 1 );cursor:pointer;display:flex;font:inherit;font-weight:600;justify-content:center;margin:0;opacity:.8;outline:0;padding:.5rem 1rem;text-transform:uppercase}button:hover,button:focus{opacity:1}button:focus{background-color:hsla(var(--accent-hsl), 0.1);color:var(--accent-fg)}button[type='submit']{background-color:var(--accent);color:var(--accent-fg)}.CombatStats{display:flex;width:12rem}.CombatStats.ready .CombatStats-solo,.CombatStats.ready .CombatStats-gangs,.CombatStats.ready .CombatStats-losses{display:flex}.CombatStats.ready .CombatStats-fetch-stats{display:none}.CombatStats-fetch-stats{display:flex;font-size:.8rem;flex-basis:100%}.CombatStats-solo,.CombatStats-gangs,.CombatStats-losses{align-items:center;border-radius:var(--border-radius);display:none;flex-basis:100%;justify-content:center;margin:0 .25rem;padding:.5rem;text-decoration:none}.CombatStats-solo:hover,.CombatStats-gangs:hover,.CombatStats-losses:hover{opacity:1 !important}.CombatStats-solo{background-color:var(--threat-high);color:var(--threat-high-fg);margin-left:0}.CombatStats-gangs{background-color:var(--threat-medium);color:var(--threat-medium-fg)}.CombatStats-losses{background-color:var(--threat-low);color:var(--threat-low-fg);margin-right:0}.Lookup{align-content:stretch;display:flex;flex-flow:column;flex-grow:1;position:relative}.Lookup-logo{background-color:hsla(var(--fg-hsl), 0.15);background-image:url("./assets/logo.svg");background-position-x:0;background-position-y:-20px;background-repeat:no-repeat;border-radius:var(--border-radius) var(--border-radius) 0 0;color:var(--bg);display:block;height:20px;left:0;opacity:.8;position:absolute;top:-20px;width:60px}.Lookup-names{border-top-left-radius:0;flex-grow:1;min-width:100%;resize:horizontal}.Lookup-names:hover + .Lookup-logo,.Lookup-names:focus + .Lookup-logo{opacity:1}.Lookup-names:focus + .Lookup-logo{background-color:hsla(var(--accent-hsl), 1)}.Lookup-submit{margin-top:1rem;padding:1rem}.Lookup-acknowledgements{color:hsla(var(--fg-hsl), 0.6);font-size:.9rem;margin-top:1rem;opacity:.8}.Lookup-acknowledgements a{color:hsla(var(--fg-hsl), 1)}.Pilot{align-items:stretch;display:flex;flex-wrap:nowrap;margin:.5rem 0;height:2.5rem}.Pilot:hover .Pilot-summary,.Pilot:hover .Pilot-affiliation{background-color:hsla(var(--fg-hsl), 0.1);color:hsla(var(--fg-hsl), 1)}.Pilot:first-child{margin-top:0}.Pilot:last-child{margin-bottom:0}.Pilot-portrait{align-self:center;border-radius:2rem;height:2rem;margin-right:1rem;width:2rem}.Pilot-summary{align-items:center;border-radius:var(--border-radius);display:flex;flex-grow:1;padding:.5rem 1rem;text-decoration:none}.Pilot-summary:after{border-top:dotted 2px  hsla(var(--fg-hsl), 0.1);content:'';flex-grow:1;height:0;margin:0 0 0 1rem}.Pilot-summary:hover{background-color:var(--accent) !important;color:var(--accent-fg) !important}.Pilot-summary:hover .Pilot-status{box-shadow:0 0 0 2px  hsla(var(--accent-fg-hsl), 1)}.Pilot-status{background-color:var(--fg);border-radius:.5rem;height:.5rem;margin-right:1rem;width:.5rem}.Pilot-status[data-status='5'],.Pilot-status[data-status='4'],.Pilot-status[data-status='3']{background-color:var(--threat-none)}.Pilot-status[data-status='2'],.Pilot-status[data-status='1']{background-color:var(--threat-low)}.Pilot-status[data-status='0']{background-color:var(--fg)}.Pilot-status[data-status='-1'],.Pilot-status[data-status='-2'],.Pilot-status[data-status='-3'],.Pilot-status[data-status='-4'],.Pilot-status[data-status='-5']{background-color:var(--threat-medium)}.Pilot-status[data-status='-6'],.Pilot-status[data-status='-7'],.Pilot-status[data-status='-8'],.Pilot-status[data-status='-9'],.Pilot-status[data-status='-10']{background-color:var(--threat-high)}.Pilot-name{font-weight:600}.Pilot-affiliation{align-items:center;border:solid 2px  hsla(var(--fg-hsl), 0.1);border-radius:var(--border-radius);display:flex;font-size:.9rem;margin-left:.5rem;padding:.5rem 1rem}.Pilot-affiliation[data-militia='caldari']{border:0;background-color:hsla(var(--militia-caldari-hsl),  0.2) !important;}.Pilot-affiliation[data-militia='minmatar']{border:0;background-color:hsla(var(--militia-minmatar-hsl), 0.2) !important;}.Pilot-affiliation[data-militia='amarr']{border:0;background-color:hsla(var(--militia-amarr-hsl),    0.2) !important;}.Pilot-affiliation[data-militia='gallente']{border:0;background-color:hsla(var(--militia-gallente-hsl), 0.2) !important;}.Pilot-alliance{margin-left:1rem}.Pilot-militia{margin-left:1rem}.Pilot-combat-stats{display:flex;margin-left:1rem}.Pilot-ship-stats{display:flex;margin-left:1rem}.ShipStats{display:flex;width:18rem;align-items:stretch}.ShipStats.ready .ShipStats-ships{display:flex}.ShipStats.ready .ShipStats-fetch-stats{display:none}.ShipStats-fetch-stats{display:flex;font-size:.8rem;flex-basis:100%}.ShipStats-ships{align-items:stretch;display:none;flex-basis:100%}.ShipStatsTile{align-items:center;background-color:hsla(var(--fg-hsl), 0.1);border-radius:var(--border-radius);color:hsla(var(--fg-hsl), 1);display:flex;flex-basis:100%;font-size:.8rem;justify-content:flex-start;margin:0 .25rem;padding:.5rem;position:relative;text-decoration:none}.ShipStatsTile:first-child{margin-left:0}.ShipStatsTile:last-child{margin-right:0}.ShipStatsTile:hover{opacity:1 !important}.ShipStatsTile-stats{bottom:2px;height:2px;left:2px;position:absolute;right:2px}.ShipStatsTile-kills,.ShipStatsTile-losses{border-radius:var(--border-radius);height:100%;position:absolute;top:0;width:0}.ShipStatsTile-losses{background-color:var(--threat-low);right:0;z-index:0}.ShipStatsTile-kills{background-color:var(--threat-high);left:0;z-index:1}textarea{background-color:hsla(var(--fg-hsl), 0.05);border:solid 2px  hsla(var(--fg-hsl), 0.1);border-radius:var(--border-radius);color:var(--fg);display:flex;font:inherit;line-height:1.25;margin:0;opacity:.8;outline:0;padding:1rem}textarea:hover,textarea:focus{opacity:1}textarea:focus{background-color:hsla(var(--accent-hsl), 0.1);border:solid 2px var(--accent);color:var(--fg)}@-moz-keyframes blink{0%{opacity:.6}50%{opacity:.4}100%{opacity:.6}}@-webkit-keyframes blink{0%{opacity:.6}50%{opacity:.4}100%{opacity:.6}}@-o-keyframes blink{0%{opacity:.6}50%{opacity:.4}100%{opacity:.6}}@keyframes blink{0%{opacity:.6}50%{opacity:.4}100%{opacity:.6}}@-moz-keyframes blonk{0%{opacity:1;letter-spacing:0}33%{opacity:.6;letter-spacing:.1rem}100%{opacity:1;letter-spacing:0}}@-webkit-keyframes blonk{0%{opacity:1;letter-spacing:0}33%{opacity:.6;letter-spacing:.1rem}100%{opacity:1;letter-spacing:0}}@-o-keyframes blonk{0%{opacity:1;letter-spacing:0}33%{opacity:.6;letter-spacing:.1rem}100%{opacity:1;letter-spacing:0}}@keyframes blonk{0%{opacity:1;letter-spacing:0}33%{opacity:.6;letter-spacing:.1rem}100%{opacity:1;letter-spacing:0}}

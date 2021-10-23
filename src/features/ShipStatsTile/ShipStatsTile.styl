@@ -1,0 +1,46 @@
+.ShipStatsTile
+	align-items      center
+	background-color @css { hsla(var(--fg-hsl), 0.1) }
+	border-radius    var(--border-radius)
+	color            @css { hsla(var(--fg-hsl), 1) }
+	display          flex
+	flex-basis       100%
+	font-size        0.8rem
+	justify-content  flex-start
+	margin           0 0.25rem
+	padding          0.5rem
+	position         relative
+	text-decoration  none
+
+	&:first-child { margin-left:  0; }
+	&:last-child  { margin-right: 0; }
+
+	&:hover
+		opacity 1 !important
+
+
+.ShipStatsTile-stats
+	bottom   2px
+	height   2px
+	left     2px
+	position absolute
+	right    2px
+
+
+.ShipStatsTile-kills
+.ShipStatsTile-losses
+	border-radius var(--border-radius)
+	height        100%
+	position      absolute
+	top           0
+	width         0
+
+.ShipStatsTile-losses
+	background-color var(--threat-low)
+	right            0
+	z-index          0
+
+.ShipStatsTile-kills
+	background-color var(--threat-high)
+	left             0
+	z-index          1
