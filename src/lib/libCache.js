@@ -1,10 +1,8 @@
 ((A) => {
 	'use strict';
 
-	//const EXPIRY_LIMIT = 1000 * 60 * 10; // 10 minutes
-	//const EXPIRY_LIMIT = 1000 * 60 * 15; // 15 minutes
+	const STORAGE      = {};             // TODO: Use IndexedDB instead of storing shit in memory
 	const EXPIRY_LIMIT = 1000 * 60 * 30; // 30 minutes
-	//const EXPIRY_LIMIT = 1000 * 60; // 1 minute
 
 	A.libCache = {
 		clearExpired,
@@ -16,7 +14,7 @@
 	function clearExpired() {
 		return new Promise((resolve, reject) => {
 
-			Object.values(localStorage).forEach((itemRaw) => {
+			Object.values(STORAGE).forEach((itemRaw) => {
 				decodeJson(itemRaw)
 					.then((item) => { if (isExpired(item)) { removeItem(item.key); } })
 					.catch(reject)
@@ -43,7 +41,7 @@
 
 
 			function doResolve(encoded) {
-				localStorage.setItem(key, encoded);
+				STORAGE[key] = encoded;
 				return resolve(item.value);
 			}
 		});
@@ -52,7 +50,7 @@
 
 	function removeItem(key) {
 		return new Promise((resolve) => {
-			localStorage.removeItem(key);
+			delete STORAGE[key];
 			return resolve();
 		});
 	}
@@ -60,7 +58,7 @@
 
 	function getItem(key) {
 		return new Promise((resolve, reject) => {
-			decodeJson(localStorage.getItem(key))
+			decodeJson(STORAGE[key])
 				.then(doResolve)
 				.catch(reject)
 			;
