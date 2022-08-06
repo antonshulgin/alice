@@ -1,6 +1,6 @@
 {
   "name": "ALICE",
-  "version": "21.10.23",
+  "version": "22.8.6",
   "description": "Automated Local Intel Consolidation for Eve",
   "private": true,
   "main": "index.js",
