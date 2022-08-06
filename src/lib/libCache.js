@@ -15,7 +15,7 @@
 		return new Promise((resolve, reject) => {
 
 			Object.values(STORAGE).forEach((itemRaw) => {
-				decodeJson(itemRaw)
+				A.jsonDecode(itemRaw)
 					.then((item) => { if (isExpired(item)) { removeItem(item.key); } })
 					.catch(reject)
 				;
@@ -34,7 +34,7 @@
 				lastCached: Date.now(),
 			};
 
-			encodeJson(item)
+			A.jsonEncode(item)
 				.then(doResolve)
 				.catch(reject)
 			;
@@ -58,7 +58,7 @@
 
 	function getItem(key) {
 		return new Promise((resolve, reject) => {
-			decodeJson(STORAGE[key])
+			A.jsonDecode(STORAGE[key])
 				.then(doResolve)
 				.catch(reject)
 			;
@@ -80,42 +80,6 @@
 		const timeDiff = Math.abs(Date.now() - item.lastCached);
 
 		return (timeDiff >= EXPIRY_LIMIT);
-	}
-
-
-	function decodeJson(jsonString = '') {
-		return new Promise((resolve, reject) => {
-			let decoded;
-
-			try {
-				decoded = JSON.parse(jsonString);
-			}
-
-			catch (e) {
-				console.warn('Failed to decode JSON', { jsonString });
-				return reject(jsonString);
-			}
-
-			return resolve(decoded);
-		});
-	}
-
-
-	function encodeJson(json = {}) {
-		return new Promise((resolve, reject) => {
-			let encoded;
-
-			try {
-				encoded = JSON.stringify(json);
-			}
-
-			catch (e) {
-				console.warn('Failed to encode JSON', { json });
-				return reject(json);
-			}
-
-			return resolve(encoded);
-		});
 	}
 
 })(window.A);

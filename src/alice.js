@@ -3,7 +3,8 @@
 
 	window.addEventListener('DOMContentLoaded', init, { once: true, passive: true });
 
-	A.ENDPOINT_ESI = 'https://esi.evetech.net/dev';
+	A.ESI_VERSION  = `latest`;
+	A.ENDPOINT_ESI = `https://esi.evetech.net/${A.ESI_VERSION}`;
 	A.ENDPOINT_ZKB = 'https://zkillboard.com/api';
 	A.TYPE_IDS_IGNORED = [
 		33328,
@@ -19,6 +20,17 @@
 	A.humanisePlural = humanisePlural;
 	A.humaniseCount  = humaniseCount;
 	A.humaniseDate   = humaniseDate;
+	A.jsonDecode     = jsonDecode;
+	A.jsonDecodeSync = jsonDecodeSync; /* eslint no-sync: off */
+	A.jsonEncode     = jsonEncode;
+	A.jsonEncodeSync = jsonEncodeSync; /* eslint no-sync: off */
+	A.clearState     = clearState;
+
+
+	function clearState() {
+		localStorage.clear();
+		location.reload();
+	}
 
 
 	function init() {
@@ -86,6 +98,66 @@
 			dom.overview.classList.toggle('hidden', true);
 			dom.overview.replaceChildren();
 		}
+	}
+
+
+	function jsonDecodeSync(jsonString = '') {
+		let decoded;
+
+		try { decoded = JSON.parse(jsonString); }
+
+		catch (e) {
+			console.warn('Failed to decode JSON', { jsonString });
+			return {};
+		}
+
+		return decoded;
+	}
+
+
+	function jsonDecode(jsonString = '') {
+		return new Promise((resolve, reject) => {
+			let decoded;
+
+			try { decoded = JSON.parse(jsonString); }
+
+			catch (e) {
+				console.warn('Failed to decode JSON', { jsonString });
+				return reject(jsonString);
+			}
+
+			return resolve(decoded);
+		});
+	}
+
+
+	function jsonEncodeSync(json = {}) {
+			let encoded;
+
+			try { encoded = JSON.stringify(json); }
+
+			catch (e) {
+				console.warn('Failed to encode JSON', { json });
+				return '';
+			}
+
+			return encoded;
+	}
+
+
+	function jsonEncode(json = {}) {
+		return new Promise((resolve, reject) => {
+			let encoded;
+
+			try { encoded = JSON.stringify(json); }
+
+			catch (e) {
+				console.warn('Failed to encode JSON', { json });
+				return reject(json);
+			}
+
+			return resolve(encoded);
+		});
 	}
 
 

@@ -8,6 +8,7 @@
 
 		root.addEventListener('submit', doSubmit);
 		root.names.addEventListener('focus', setFocus);
+		root.doReset.addEventListener('click', A.clearState);
 
 		return {
 			setFocus,
@@ -58,8 +59,7 @@
 
 		function fetchPilotId(name = '') {
 			return new Promise((resolve, reject) => {
-
-				A.libNet.load(`${A.ENDPOINT_ESI}/search/?search=${encodeURIComponent(name)}&categories=character&strict=true`)
+				A.libNet.load(`${A.ENDPOINT_ESI}/characters/${A.libAuth.getPilotId()}/search/?search=${encodeURIComponent(name)}&categories=character&strict=true`)
 					.then(doResolve)
 					.catch(reject)
 				;
